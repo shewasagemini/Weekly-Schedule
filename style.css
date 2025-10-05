@@ -1,0 +1,367 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    min-height: 100vh;
+    animation: gradientShift 15s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Styles */
+h1 {
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.3)); }
+    50% { filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.6)); }
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 30px 0;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    overflow: hidden;
+    animation: tableSlideIn 1s ease;
+}
+
+@keyframes tableSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    position: relative;
+}
+
+thead::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ffd700, #ffed4e, #ffd700);
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+th {
+    padding: 18px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.15em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+th:last-child {
+    border-right: none;
+}
+
+th:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    font-size: 0.95em;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-weight: 500;
+}
+
+tbody tr {
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+    transform: scale(1.01);
+    z-index: 10;
+}
+
+tbody tr:hover td {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: #667eea;
+}
+
+td:hover {
+    transform: scale(1.1) translateY(-5px);
+    z-index: 20;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    font-size: 1.05em;
+}
+
+td::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+td:hover::before {
+    opacity: 1;
+}
+
+/* Time Slot Column */
+.time-slot {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    font-weight: 700;
+    color: #495057;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    border-right: 3px solid #667eea;
+}
+
+.time-slot:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    color: #212529;
+}
+
+/* Activity Type Colors with Gradients */
+.morning {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+    color: #856404;
+    border-left: 4px solid #ffc107;
+}
+
+.work {
+    background: linear-gradient(135deg, #d1ecf1 0%, #b8daff 100%);
+    color: #0c5460;
+    border-left: 4px solid #17a2b8;
+}
+
+.break {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.exercise {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+.evening {
+    background: linear-gradient(135deg, #e7e8ea 0%, #d6d8db 100%);
+    color: #383d41;
+    border-left: 4px solid #6c757d;
+}
+
+.leisure {
+    background: linear-gradient(135deg, #d6d8f5 0%, #c5c7eb 100%);
+    color: #383d92;
+    border-left: 4px solid #6610f2;
+}
+
+.personal {
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+    color: #880e4f;
+    border-left: 4px solid #e91e63;
+}
+
+.social {
+    background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+    color: #f57f17;
+    border-left: 4px solid #ffc107;
+}
+
+.weekend {
+    background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
+    color: #2e7d32;
+    border-left: 4px solid #4caf50;
+}
+
+.sleep {
+    background: linear-gradient(135deg, #b39ddb 0%, #9575cd 100%);
+    color: #4a148c;
+    border-left: 4px solid #673ab7;
+}
+
+/* Hover effects for each activity type */
+.morning:hover {
+    background: linear-gradient(135deg, #ffe69c 0%, #ffd966 100%);
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+}
+
+.work:hover {
+    background: linear-gradient(135deg, #b8daff 0%, #9fcdff 100%);
+    box-shadow: 0 10px 30px rgba(23, 162, 184, 0.4);
+}
+
+.break:hover {
+    background: linear-gradient(135deg, #c3e6cb 0%, #a8ddb5 100%);
+    box-shadow: 0 10px 30px rgba(40, 167, 69, 0.4);
+}
+
+.exercise:hover {
+    background: linear-gradient(135deg, #f5c6cb 0%, #f1aeb5 100%);
+    box-shadow: 0 10px 30px rgba(220, 53, 69, 0.4);
+}
+
+.evening:hover {
+    background: linear-gradient(135deg, #d6d8db 0%, #ced4da 100%);
+    box-shadow: 0 10px 30px rgba(108, 117, 125, 0.4);
+}
+
+.leisure:hover {
+    background: linear-gradient(135deg, #c5c7eb 0%, #b4b6e1 100%);
+    box-shadow: 0 10px 30px rgba(102, 16, 242, 0.4);
+}
+
+.personal:hover {
+    background: linear-gradient(135deg, #f8bbd0 0%, #f48fb1 100%);
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.4);
+}
+
+.social:hover {
+    background: linear-gradient(135deg, #fff59d 0%, #fff176 100%);
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+}
+
+.weekend:hover {
+    background: linear-gradient(135deg, #a5d6a7 0%, #81c784 100%);
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
+}
+
+.sleep:hover {
+    background: linear-gradient(135deg, #9575cd 0%, #7e57c2 100%);
+    box-shadow: 0 10px 30px rgba(103, 58, 183, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    table {
+        font-size: 0.9em;
+    }
+    
+    th, td {
+        padding: 10px 6px;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 0.75em;
+    }
+    
+    th, td {
+        padding: 8px 4px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    td:hover {
+        transform: scale(1.05) translateY(-3px);
+    }
+}
+
+/* Add subtle animation to cells on load */
+tbody tr {
+    animation: rowFadeIn 0.6s ease forwards;
+    opacity: 0;
+}
+
+tbody tr:nth-child(1) { animation-delay: 0.1s; }
+tbody tr:nth-child(2) { animation-delay: 0.2s; }
+tbody tr:nth-child(3) { animation-delay: 0.3s; }
+tbody tr:nth-child(4) { animation-delay: 0.4s; }
+tbody tr:nth-child(5) { animation-delay: 0.5s; }
+tbody tr:nth-child(6) { animation-delay: 0.6s; }
+tbody tr:nth-child(7) { animation-delay: 0.7s; }
+tbody tr:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes rowFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

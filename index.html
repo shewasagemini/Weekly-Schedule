@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 1400px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .header .title {
+            font-size: 3em;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .header .subtitle {
+            font-size: 1em;
+            font-weight: 400;
+            color: #666;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 3px solid #000;
+            margin-top: 20px;
+        }
+
+        .schedule-table th {
+            background: #FFE66D;
+            color: #000;
+            font-size: 1.2em;
+            font-weight: 700;
+            padding: 20px 15px;
+            text-align: center;
+            border: 3px solid #000;
+            letter-spacing: 1px;
+        }
+
+        .schedule-table td {
+            background: white;
+            border: 3px solid #000;
+            padding: 20px 15px;
+            text-align: center;
+            vertical-align: middle;
+            min-height: 100px;
+            color: #333;
+        }
+
+        .schedule-table td.time-header {
+            background: #FFE66D;
+            font-weight: 700;
+            font-size: 0.95em;
+            color: #000;
+        }
+
+        .schedule-table td.class-cell {
+            background: #FFF6CC;
+        }
+
+        .course-code {
+            font-size: 1.6em;
+            font-weight: 700;
+            margin: 10px 0;
+            letter-spacing: 1px;
+            color: #000;
+        }
+
+        .activity-text {
+            font-size: 0.95em;
+            line-height: 1.8;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .break-text {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #666;
+            text-transform: lowercase;
+        }
+
+        .empty-cell {
+            background: white;
+        }
+
+        @media (max-width: 768px) {
+            .header .title {
+                font-size: 2em;
+            }
+            
+            .schedule-table th {
+                font-size: 0.9em;
+                padding: 12px 8px;
+            }
+            
+            .schedule-table td {
+                padding: 12px 8px;
+                font-size: 0.85em;
+            }
+            
+            .course-code {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+
+            <div class="title"> MY WEEKLY SCHEDULE</div>
+    
+        <table class="schedule-table">
+            <tr>
+                <th>TIME</th>
+                <th>MON</th>
+                <th>TUES</th>
+                <th>WED</th>
+                <th>THURS</th>
+                <th>FRI</th>
+                <th>SAT</th>
+                <th>SUN</th>
+            </tr>
+            <tr>
+                <td class="time-header">7:00 AM - 9:00 AM</td>
+                <td class="empty-cell" rowspan="6">
+                    <div class="activity-text">
+                        Scan notes<br>
+                        Cooking<br>
+                    Reading books
+                    </div>
+                </td>
+                <td class="empty-cell">
+                    <div class="activity-text">Getting ready for school</div>
+                </td>
+                <td class="class-cell">
+                    <div class="course-code">DCEE 25</div>
+                </td>
+                <td class="empty-cell">
+                    <div class="activity-text">Do a quick home workout</div>
+                </td>
+                <td class="empty-cell" rowspan="6">
+                    <div class="activity-text">
+                         Water the plants<br>
+                         Read books<br>
+                         Chilling<br>
+                         Stroll<br>
+                        Watching Netflix
+                    </div>
+                </td>
+                <td class="class-cell" rowspan="3">
+                    <div class="course-code">DCEE 24</div>
+                </td>
+                <td class="empty-cell" rowspan="6">
+                    <div class="activity-text">
+                        Doing laundry<br>
+                        Cleaning<br>
+                        Movie marathon
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-header">9:00 AM - 11:00 AM</td>
+                <td class="class-cell">
+                    <div class="course-code">CPEN 101</div>
+                </td>
+                <td class="empty-cell">
+                    <div class="break-text">quick nap</div>
+                </td>
+                <td class="class-cell" rowspan="2">
+                    <div class="course-code">CPEN 85</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-header">11:00 AM - 1:00 PM</td>
+                <td class="empty-cell">
+                    <div class="break-text">snacks time</div>
+                </td>
+                <td class="class-cell">
+                    <div class="course-code">CPEN 90</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-header">1:00 PM - 3:00 PM</td>
+                <td class="class-cell" rowspan="3">
+                    <div class="course-code">CPEN 75</div>
+                </td>
+                <td class="class-cell">
+                    <div class="course-code">CPEN 80</div>
+                </td>
+                <td class="empty-cell" rowspan="3">
+                    <div class="activity-text">
+                        Sleeping<br>
+                        Listening to podcast
+                    </div>
+                </td>
+                <td class="empty-cell">
+                    <div class="break-text">quick nap</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-header">3:00 PM - 5:00 PM</td>
+                <td class="empty-cell">
+                    <div class="break-text">break time</div>
+                </td>
+                <td class="class-cell" rowspan="2">
+                    <div class="course-code">MATH 14</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time-header">5:00 PM - 7:00 PM</td>
+                <td class="empty-cell">
+                    <div class="activity-text">Recharge at home</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    </div>
+</body>
+</html>
